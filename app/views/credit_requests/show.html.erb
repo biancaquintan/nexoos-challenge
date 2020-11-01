@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @credit_request.value %>
+</p>
+
+<p>
+  <strong>Taxa:</strong>
+  <%= @credit_request.taxa %>
+</p>
+
+<p>
+  <strong>Periods:</strong>
+  <%= @credit_request.periods %>
+</p>
+
+<p>
+  <strong>Requester:</strong>
+  <%= @credit_request.requester_id %>
+</p>
+
+<%= link_to 'Edit', edit_credit_request_path(@credit_request) %> |
+<%= link_to 'Back', credit_requests_path %>

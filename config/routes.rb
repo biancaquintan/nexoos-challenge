@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :credit_requests
   resources :telephones
   resources :addresses
   resources :requesters
