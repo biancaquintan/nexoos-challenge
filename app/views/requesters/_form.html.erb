@@ -1,0 +1,53 @@
+<%= form_with(model: requester, local: true) do |form| %>
+  <% if requester.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(requester.errors.count, "error") %> prohibited this requester from being saved:</h2>
+
+      <ul>
+      <% requester.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :razao_social %>
+    <%= form.text_field :razao_social %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cnpj %>
+    <%= form.text_field :cnpj %>
+  </div>
+
+  <%= link_to_add_association 'Add Address', form, :addresses, 
+    'data-association-insertion-node' => "#dynamicAddress",
+    'data-association-insertion-method' => "append",
+    :wrap_object => Proc.new {|address| address.build_requester; address} %>
+  
+  <hr/>
+
+  <fieldset id="dynamicAddress">
+    <%= form.fields_for :addresses do |address| %>
+      <%= render 'address_fields', f: address  %>
+    <% end %>
+  </fieldset>
+
+  <%= link_to_add_association 'Add Phone', form, :telephones, 
+    'data-association-insertion-node' => "#dynamicPhone",
+    'data-association-insertion-method' => "append",
+    :wrap_object => Proc.new {|telephone| telephone.build_requester; telephone} %>
+  
+  <hr/>
+
+  <fieldset id="dynamicPhone">
+    <%= form.fields_for :telephones do |telephone| %>
+      <%= render 'telephone_fields', f: telephone  %>
+    <% end %>
+  </fieldset>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
