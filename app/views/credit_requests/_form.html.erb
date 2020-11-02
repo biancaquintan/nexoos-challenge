@@ -1,7 +1,7 @@
 <%= form_with(model: credit_request, local: true) do |form| %>
   <% if credit_request.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(credit_request.errors.count, "error") %> prohibited this credit_request from being saved:</h2>
+      <h2><%= pluralize(credit_request.errors.count, "erro(s)") %> impedem que esta solicitação seja salva:</h2>
 
       <ul>
         <% credit_request.errors.full_messages.each do |message| %>

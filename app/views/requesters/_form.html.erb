@@ -1,7 +1,7 @@
 <%= form_with(model: requester, local: true) do |form| %>
   <% if requester.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(requester.errors.count, "error") %> prohibited this requester from being saved:</h2>
+      <h2><%= pluralize(requester.errors.count, "erro(s)") %> impedem que este solicitante seja salvo:</h2>
 
       <ul>
       <% requester.errors.full_messages.each do |message| %>
@@ -16,8 +16,8 @@
     <%= form.text_field :company_name, placeholder: 'Razão Social', class:'col-md-5' %>
     <%= form.text_field :cnpj, placeholder: 'CNPJ', class:'col-md-4' %>
   </div>
-
   <hr/>
+  
   <h5>Endereço</h5>
   <%= link_to_add_association form, :addresses, 
     class: 'btn btn-sm btn-info',
@@ -27,7 +27,6 @@
     <b>+</b> Adicionar Endereço  
   <% end %>
   <hr/>
-
 
   <fieldset id="dynamicAddress">
     <%= form.fields_for :addresses do |address| %>
@@ -51,7 +50,6 @@
       <%= render 'telephone_fields', f: telephone  %>
     <% end %>
   </fieldset>
-
   <hr/>
   
   <div class="actions text-center mt-5">
