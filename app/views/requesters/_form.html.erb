@@ -11,14 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :razao_social %>
-    <%= form.text_field :razao_social %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cnpj %>
-    <%= form.text_field :cnpj %>
+  <div class="col-md-12">
+    <%= form.text_field :company_name, placeholder: 'Razão Social', class:'col-md-5' %>
+    <%= form.text_field :cnpj, placeholder: 'CNPJ', class:'col-md-5' %>
   </div>
 
   <%= link_to_add_association 'Add Address', form, :addresses, 

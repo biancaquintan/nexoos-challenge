@@ -36,7 +36,7 @@ class CreditRequestsController < ApplicationController
       end
     end
   end
-
+  
   # PATCH/PUT /credit_requests/1
   # PATCH/PUT /credit_requests/1.json
   def update

@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Razao social:</strong>
-  <%= @requester.razao_social %>
+  <strong>Razão Social:</strong>
+  <%= @requester.company_name %>
 </p>
 
 <p>
-  <strong>Cnpj:</strong>
+  <strong>CNPJ:</strong>
   <%= @requester.cnpj %>
 </p>
 
-<%= link_to 'Edit', edit_requester_path(@requester) %> |
-<%= link_to 'Back', requesters_path %>
+<%= link_to 'Editar', edit_requester_path(@requester) %> |
+<%= link_to 'Voltar', requesters_path %>
