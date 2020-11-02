@@ -1,20 +1,14 @@
 <div class="nested-fields">
-    <div class+"row">
-      <%= f.label :street %>
-      <%= f.text_field :street %>
+  <div class="col-md-12 mb-3">
+    <%= f.text_field :street, placeholder: 'Rua', class:'col-md-8' %>
+    <%= f.text_field :number, placeholder: 'Nº', class:'col-md-1 mb-3' %>
 
-      <%= f.label :number %>
-      <%= f.text_field :number %>
+    <%= f.text_field :city, placeholder: 'Cidade', class:'col-md-3' %>
+    <%= f.text_field :state, placeholder: 'Estado', class:'col-md-3' %>
+    <%= f.text_field :cep, placeholder: 'CEP', class:'col-md-3' %>
 
-      <%= f.label :city %>
-      <%= f.text_field :city %>
-
-      <%= f.label :state %>
-      <%= f.text_field :state %>
-
-      <%= f.label :cep %>
-      <%= f.text_field :cep %>
-      
-      <%= link_to_remove_association "remove", f %>
-    </div>
+    <%= link_to_remove_association f, class: 'btn btn-sm btn-danger pl-3 pr-3', title:'Remover Endereço' do %>
+      <b>-</b>
+    <% end %>
+  </div>
 </div>

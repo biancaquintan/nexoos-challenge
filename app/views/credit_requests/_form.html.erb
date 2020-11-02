@@ -11,27 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :value %>
-    <%= form.text_field :value %>
-  </div>
-
-  <div class="field">
-    <%= form.label :taxa %>
-    <%= form.text_field :taxa %>
-  </div>
-
-  <div class="field">
-    <%= form.label :periods %>
-    <%= form.number_field :periods %>
-  </div>
-
-  <div class="field">
-    <%= form.label :requester_id %>
+  <div class="col-md-12 mb-3">
+    <%= form.label 'Selecione um Solicitante Cadastrado' %>
     <%= form.collection_select :requester_id, Requester.order('company_name ASC'), :id, :company_name %>
   </div>
+  <div class="col-md-12 mb-3"> 
+    <%= form.text_field :value, placeholder: 'Valor(R$)', class:'col-md-4' %>
+    <%= form.text_field :taxa, placeholder: 'Taxa(%)', class:'col-md-2' %>
+    <%= form.number_field :periods, placeholder: 'Nº de períodos', class:'col-md-2' %>
+  </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field">
+  </div>
+
+  <hr>
+
+  <div class="actions text-center mt-5">
+    <%= form.submit 'Enviar', class:"btn btn-lg btn-primary" %>
   </div>
 <% end %>

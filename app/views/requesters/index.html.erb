@@ -14,7 +14,7 @@
   <tbody>
     <% @requesters.each do |requester| %>
       <tr>
-        <td><%= requester.razao_social %></td>
+        <td><%= requester.company_name %></td>
         <td><%= requester.cnpj %></td>
         <td><%= link_to 'Show', requester %></td>
         <td><%= link_to 'Edit', edit_requester_path(requester) %></td>

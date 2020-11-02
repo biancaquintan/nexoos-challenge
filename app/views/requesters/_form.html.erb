@@ -11,17 +11,23 @@
     </div>
   <% end %>
 
-  <div class="col-md-12">
+  <h5>Dados da Empresa</h5>
+  <div class="col-md-12 mb-3">
     <%= form.text_field :company_name, placeholder: 'Razão Social', class:'col-md-5' %>
-    <%= form.text_field :cnpj, placeholder: 'CNPJ', class:'col-md-5' %>
+    <%= form.text_field :cnpj, placeholder: 'CNPJ', class:'col-md-4' %>
   </div>
 
-  <%= link_to_add_association 'Add Address', form, :addresses, 
+  <hr/>
+  <h5>Endereço</h5>
+  <%= link_to_add_association form, :addresses, 
+    class: 'btn btn-sm btn-info',
     'data-association-insertion-node' => "#dynamicAddress",
     'data-association-insertion-method' => "append",
-    :wrap_object => Proc.new {|address| address.build_requester; address} %>
-  
+    :wrap_object => Proc.new {|address| address.build_requester; address} do %>
+    <b>+</b> Adicionar Endereço  
+  <% end %>
   <hr/>
+
 
   <fieldset id="dynamicAddress">
     <%= form.fields_for :addresses do |address| %>
@@ -29,11 +35,15 @@
     <% end %>
   </fieldset>
 
-  <%= link_to_add_association 'Add Phone', form, :telephones, 
+  <hr/>
+  <h5>Contato</h5>
+  <%= link_to_add_association form, :telephones, 
+    class: 'btn btn-sm btn-info',
     'data-association-insertion-node' => "#dynamicPhone",
     'data-association-insertion-method' => "append",
-    :wrap_object => Proc.new {|telephone| telephone.build_requester; telephone} %>
-  
+    :wrap_object => Proc.new {|telephone| telephone.build_requester; telephone} do %>
+    <b>+</b> Adicionar Contato  
+  <% end %>
   <hr/>
 
   <fieldset id="dynamicPhone">
@@ -41,8 +51,10 @@
       <%= render 'telephone_fields', f: telephone  %>
     <% end %>
   </fieldset>
+
+  <hr/>
   
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions text-center mt-5">
+    <%= form.submit 'Salvar', class:"btn btn-lg btn-primary" %>
   </div>
 <% end %>
