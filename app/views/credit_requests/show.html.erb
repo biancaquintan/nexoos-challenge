@@ -17,7 +17,7 @@
   </div>
 
   <div id="result" class="col-md-12 mb-5 text-center">
-    <span class="alert alert-warning"><small><%= @credit_request.periods %>x</small> R$ <%= @credit_request.calc %></span>
+    <span class="alert alert-warning"><small><%= @credit_request.periods %>x</small> R$ <%= @credit_request.calc.round(2) %></span>
   </div>
   
 </div>
