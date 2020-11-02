@@ -1,27 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-VALOR DAS PARCELAS:  <%= @credit_request.calc %>
 
+<div class="alert alert-info">
 
-<p>
-  <strong>Value:</strong>
-  <%= @credit_request.value %>
-</p>
+  <h3>Solicitação de Crédito (Nº <%= @credit_request.id %>)</h3>
+  <hr>
 
-<p>
-  <strong>Taxa:</strong>
-  <%= @credit_request.taxa %>
-</p>
+  <div class="col-md-12 mb-3">
+    <strong>Empresa Solicitante:</strong>
+    <%= @credit_request.requester.company_name %>
+  </div>
 
-<p>
-  <strong>Periods:</strong>
-  <%= @credit_request.periods %>
-</p>
+  <div class="col-md-12 mb-3">
+    <strong>Valor Solicitado:</strong>
+    <%= @credit_request.value %> <span class="badge badge-warning">Taxa <%= @credit_request.taxa %>% a.m.</span>
+  </div>
 
-<p>
-  <strong>Requester:</strong>
-  <%= @credit_request.requester_id %>
-</p>
+  <div id="result" class="col-md-12 mb-5 text-center">
+    <span class="alert alert-warning"><small><%= @credit_request.periods %>x</small> R$ <%= @credit_request.calc %></span>
+  </div>
+  
+</div>
 
-
+<br>
 <%= link_to 'Voltar', credit_requests_path %>
