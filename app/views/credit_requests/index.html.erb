@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Credit Requests</h1>
-
-<table>
+<%= link_to '+ Nova Soliticação de Crédito', new_credit_request_path, class:'btn btn-info mb-5 float-right' %>
+<h1>Solicitações de Crédito</h1>
+<table class="table">
   <thead>
     <tr>
       <th>Value</th>
@@ -20,14 +20,13 @@
         <td><%= credit_request.taxa %></td>
         <td><%= credit_request.periods %></td>
         <td><%= credit_request.requester_id %></td>
-        <td><%= link_to 'Show', credit_request %></td>
-        <td><%= link_to 'Edit', edit_credit_request_path(credit_request) %></td>
-        <td><%= link_to 'Destroy', credit_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Ver', credit_request, class:'btn btn-sm btn-primary' %>
+          <%= link_to 'Editar', edit_credit_request_path(credit_request), class:'btn btn-sm btn-primary' %>
+          <%= link_to 'Excluir', credit_request, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-sm btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Credit Request', new_credit_request_path %>

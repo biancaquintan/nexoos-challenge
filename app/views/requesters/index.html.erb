@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Requesters</h1>
 
-<table>
+
+<%= link_to '+ Novo Solicitante', new_requester_path, class:'btn btn-info mb-5 float-right' %>
+<h1>Solicitantes Cadastrados</h1>
+<table class="table">
   <thead>
     <tr>
       <th>Razao social</th>
@@ -16,14 +18,13 @@
       <tr>
         <td><%= requester.company_name %></td>
         <td><%= requester.cnpj %></td>
-        <td><%= link_to 'Show', requester %></td>
-        <td><%= link_to 'Edit', edit_requester_path(requester) %></td>
-        <td><%= link_to 'Destroy', requester, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Ver', requester, class:'btn btn-sm btn-primary' %>
+          <%= link_to 'Editar', edit_requester_path(requester), class:'btn btn-sm btn-primary' %>
+          <%= link_to 'Excluir', requester, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-sm btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Requester', new_requester_path %>
