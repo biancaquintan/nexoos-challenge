@@ -11,21 +11,23 @@
     </div>
   <% end %>
 
-  <h5>Dados da Empresa</h5>
+  <h5 class="mt-4">Dados da Empresa</h5>
   <div class="col-md-12 mb-3">
     <%= form.text_field :company_name, placeholder: 'Razão Social', class:'col-md-5' %>
     <%= form.text_field :cnpj, placeholder: 'CNPJ', class:'col-md-4' %>
-  </div>
-  <hr/>
+  </div>  
+
+  <br/>
   
-  <h5>Endereço</h5>
   <%= link_to_add_association form, :addresses, 
-    class: 'btn btn-sm btn-info',
+    class: 'btn btn-sm btn-info ml-3',
     'data-association-insertion-node' => "#dynamicAddress",
     'data-association-insertion-method' => "append",
     :wrap_object => Proc.new {|address| address.build_requester; address} do %>
-    <b>+</b> Adicionar Endereço  
+    <i class="fa fa-plus"></i> Adicionar Endereço  
   <% end %>
+  <h5 class="float-left">Endereço</h5>
+
   <hr/>
 
   <fieldset id="dynamicAddress">
@@ -34,15 +36,16 @@
     <% end %>
   </fieldset>
 
-  <hr/>
-  <h5>Contato</h5>
+  <br/>
+  
   <%= link_to_add_association form, :telephones, 
-    class: 'btn btn-sm btn-info',
+    class: 'btn btn-sm btn-info ml-3',
     'data-association-insertion-node' => "#dynamicPhone",
     'data-association-insertion-method' => "append",
     :wrap_object => Proc.new {|telephone| telephone.build_requester; telephone} do %>
-    <b>+</b> Adicionar Contato  
+    <i class="fa fa-plus"></i> Adicionar Contato  
   <% end %>
+  <h5 class="float-left">Contato</h5>
   <hr/>
 
   <fieldset id="dynamicPhone">

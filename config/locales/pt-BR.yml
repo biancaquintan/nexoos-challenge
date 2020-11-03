@@ -1,4 +1,3 @@
----
 pt-BR:
   activerecord:
     models:
@@ -7,6 +6,9 @@ pt-BR:
       requester: Solicitante
       credit_request: Solicitação de Crédito
     attributes:
+      requester:
+        company_name: Razão Social
+        cnpj: CNPJ
       address:
         street: Rua
         number: Nº
@@ -16,9 +18,6 @@ pt-BR:
       telephone:
         ddd: DDD
         phone: Telefone
-      requester:
-        company_name: Razão Social
-        cnpj: CNPJ
       credit_request:
         value: Valor
         taxa: Taxa
@@ -82,52 +81,6 @@ pt-BR:
     - :day
     - :month
     - :year
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: aproximadamente 1 hora
-        other: aproximadamente %{count} horas
-      about_x_months:
-        one: aproximadamente 1 mês
-        other: aproximadamente %{count} meses
-      about_x_years:
-        one: aproximadamente 1 ano
-        other: aproximadamente %{count} anos
-      almost_x_years:
-        one: quase 1 ano
-        other: quase %{count} anos
-      half_a_minute: meio minuto
-      less_than_x_minutes:
-        one: menos de um minuto
-        other: menos de %{count} minutos
-      less_than_x_seconds:
-        one: menos de 1 segundo
-        other: menos de %{count} segundos
-      over_x_years:
-        one: mais de 1 ano
-        other: mais de %{count} anos
-      x_days:
-        one: 1 dia
-        other: "%{count} dias"
-      x_minutes:
-        one: 1 minuto
-        other: "%{count} minutos"
-      x_months:
-        one: 1 mês
-        other: "%{count} meses"
-      x_years:
-        one: 1 ano
-        other: "%{count} anos"
-      x_seconds:
-        one: 1 segundo
-        other: "%{count} segundos"
-    prompts:
-      day: Dia
-      hour: Hora
-      minute: Minuto
-      month: Mês
-      second: Segundo
-      year: Ano
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -236,10 +189,4 @@ pt-BR:
       last_word_connector: " e "
       two_words_connector: " e "
       words_connector: ", "
-  time:
-    am: ''
-    formats:
-      default: "%a, %d de %B de %Y, %H:%M:%S %z"
-      long: "%d de %B de %Y, %H:%M"
-      short: "%d de %B, %H:%M"
-    pm: ''
+
