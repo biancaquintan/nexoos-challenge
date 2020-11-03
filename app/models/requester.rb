@@ -6,5 +6,5 @@ class Requester < ApplicationRecord
     accepts_nested_attributes_for :addresses, :telephones, reject_if: :all_blank, allow_destroy: true
 
     validates_presence_of :company_name
-    validates_numericality_of :cnpj
+    validates :cnpj, numericality: true, length: { maximum: 14 }
 end
