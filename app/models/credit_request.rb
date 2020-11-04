@@ -2,6 +2,7 @@ class CreditRequest < ApplicationRecord
   belongs_to :requester
 
   validates_numericality_of :taxa, :value, :periods
+  validates_length_of :periods, :maximum => 2
 
   def calc
     @value = self.value
